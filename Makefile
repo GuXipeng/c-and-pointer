@@ -1,6 +1,8 @@
 obj = ex1-1.o
+BUILD_OUTPUT := build/
 all:$(obj)
-	gcc $(obj) -o ./build/ex1-1
+	-$(shell mkdir build)
+	gcc $(obj) -o $(BUILD_OUTPUT)ex1-1
 .PHONY:all
 
 ex1-1.o:
@@ -9,4 +11,4 @@ ex1-1.o:
 ex1-2:
 	gcc ex1-2.c -o build/ex1-2
 clean:
-	rm -rf *.o ./build/* *~
+	rm -rf *.o ./build *~
